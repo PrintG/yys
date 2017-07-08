@@ -1,0 +1,774 @@
+@charset 'utf-8';
+
+html{
+    height:100%;
+    background:#171020;
+}
+.showPlay{
+    width:100%;
+    height:100%;
+    overflow-y:hidden;
+}
+/**********************
+    背景部分
+*********************/
+#bg{
+    position:absolute;
+    width:100%;
+    min-width:1280px;
+}
+#bg .bg{
+    width:100%;
+    background-position:center;
+    background-repeat:no-repeat;
+}
+#bg .bg1{
+    height:1025px;
+    background-image:url('../img/home/bg1.jpg');
+    background-position-y:-55px;
+}
+/* flash */
+#bg .flash_bg{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:1080px;
+    opacity: 0;
+}
+/* Bg2 */
+#bg .bg2{
+    height:1080px;
+    background:url('../img/home/bg2.jpg') no-repeat;
+    background-position:top center;
+}
+/* Bg3 */
+#bg .bg3{
+    height:534px;
+    background:url('../img/home/bg3.jpg') no-repeat;
+    background-position:top center;
+}
+
+/**********************
+    首页部分
+*********************/
+#warp{
+    position:absolute;
+    width:100%;
+    overflow:hidden;
+    min-width:1280px;
+}
+/*** 区块1 ***/
+#warp .warp1{
+    position:relative;
+    width:1280px;
+    height:1003px;
+    margin:auto;
+    padding-top:22px;
+}
+  /* logo部分 */
+#warp .warp1 #logo{
+    position:absolute;
+    left:-400px;
+    width:135px;
+    opacity:0;
+}
+#warp .warp1 #logo a img:nth-child(1){
+    float:left;
+}
+#warp .warp1 #logo a img:nth-child(2){
+    float:right;
+    width:86px;
+    height:86px;
+    border:2px solid #fff;
+    border-radius:18px;
+}
+  /* goIndex */
+#warp .warp1 #goIndex{
+    position:absolute;
+    right:-400px;
+    z-index:1;
+    width:176px;
+    height:44px;
+    background:url('../img/home/goWeb.png') no-repeat;
+    border-radius:20px;
+    overflow:hidden;
+    opacity:0;
+}
+#warp .warp1 #goIndex a{
+    display:block;
+    width:100%;
+    height:44px;
+    background:rgba(0,0,0,.1);
+    transition:1s;
+}
+#warp .warp1 #goIndex a:hover{
+    background:rgba(0,0,0,0);
+}
+  /* Title */
+#warp .warp1 #title-font{
+    position:absolute;
+    right:0;
+    bottom:0;
+    width:340px;
+    height:521px;
+    background:url('../img/home/title.png') no-repeat;
+    opacity:0;
+}
+  /* Vedio Btn */
+#warp .warp1 #vedio-btn{
+    position:absolute;
+    top:430px;
+    right:255px;
+    width:165px;
+    height:120px;
+    background:url('../img/home/vedioBtn.png') no-repeat;
+}
+#warp .warp1 #vedio-btn .Btn-AR{
+    position:absolute;
+    top:2px;
+    left:48px;
+    width:122px;
+    height:122px;
+    background:url('../img/home/vedioBtnAR.png') no-repeat;
+    cursor:pointer;
+}
+#warp .warp1 #Play-Vedio{
+    display:none;
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:666;
+    width:106%;
+    height:100%;
+    background:rgba(0,0,0,0.8);
+}
+#warp .warp1 #Play-Vedio.show{
+    left:-43px;
+    width:107%;
+    min-width:1366px;
+}
+#warp .warp1 #Play-Vedio .warp{
+    position:absolute;
+    left:50%;
+    top:100px;
+    width:805px;
+    margin-left:-402.5px;
+}
+#warp .warp1 #Play-Vedio .warp object{
+    position:relative;
+    display:block;
+    border:2px solid #b69a76;
+}
+#warp .warp1 #Play-Vedio .warp .close,#warp .warp2 .popWindow .winWarp .close{
+    position:absolute;
+    top:0px;
+    right:-44px;
+    width:34px;
+    height:34px;
+    background:url('../img/home/close.png') no-repeat;
+    cursor:pointer;
+    transition:1s;
+}
+#warp .warp1 #Play-Vedio .warp .close:hover,#warp .warp2 .popWindow .winWarp .close:hover{
+    transform:rotate(360deg);
+}
+  /* Download Game */
+#warp .warp1 #download{
+    position:absolute;
+    bottom:200px;
+    right:125px;
+    width:340px;
+    height:154px;
+    opacity:0;
+}
+#warp .warp1 #download .font{
+    margin-bottom:10px;
+    color:#3d2672;
+    font-size:16px;
+    font-weight:bold;
+    text-indent:.5em;
+}
+#warp .warp1 #download .qdCode{
+    float:left;
+    position:relative;
+    width:120px;
+    height:120px;
+    border:5px solid rgba(255,255,255,.5);
+    background:url('../img/home/qrCode.png') no-repeat 0 0/cover;
+    border-radius:10px;
+}
+#warp .warp1 #download .qdCode img{
+    position:absolute;
+    left:-12px;
+    top:0;
+    animation:moveLine 2s linear infinite;
+    -ms-animation:moveLine 2s linear infinite;
+}
+
+#warp .warp1 #download .click-download{
+    float:right;
+    width:204px;
+}
+#warp .warp1 #download .click-download a img:nth-child(1){
+    margin-bottom:7px;
+}
+#warp .warp1 #download .click-download a:nth-child(2){
+    display:block;
+    background:#000;
+}
+#warp .warp1 #download .click-download a:nth-child(2) img{
+    opacity:.82;
+    transition:.5s;
+}
+#warp .warp1 #download .click-download a:nth-child(2):hover img{
+    opacity:1;
+}
+#warp .warp1 #mouse{
+    position:absolute;
+    left:50%;
+    bottom:235px;
+    width:30px;
+    height:70px;
+    margin-left:-15px;
+    background-image:url('../img/home/dBtn.png');
+    opacity:1;
+    animation:moveMouse 1.5s linear infinite;
+    -ms-animation:moveMouse 1.5s linear infinite;
+}
+
+/*** 区块2(新版本情报) ***/
+#warp .warp2{
+    width:100%;
+}
+  /* 标题 */
+#warp .warp2 .title{
+    position:relative;
+    top:0;
+    width:800px;
+    height:150px;
+    margin:auto;
+    background-image:url('../img/home/newinf/newinf_title.png');
+    transition:2s;
+}
+#warp .warp2 .title.hide{
+    opacity:0;
+    top:80px;
+}
+#warp .warp2 .main{
+    margin-top:25px;
+}
+#warp .warp2 .main ul{
+    width:1285px;
+    height:600px;
+    margin:auto;
+}
+#warp .warp2 .main ul li{
+    position:relative;
+    top:0;
+    float:left;
+    width:418px;
+    height:211px;
+    margin:0px 6px 20px;
+    cursor:pointer;
+    background-repeat:no-repeat;
+    background-position-y:15px;
+    transition:background-position-y .5s,top 1.5s,opacity 1.5s;
+}
+#warp .warp2 .main ul li.hide{
+    top:120px;
+    opacity:0;
+}
+#warp .warp2 .main ul li:nth-child(1){
+    background-image:url('../img/home/newinf/p1.png');
+}
+#warp .warp2 .main ul li:nth-child(2){
+    background-image:url('../img/home/newinf/p2.png');
+}
+#warp .warp2 .main ul li:nth-child(3){
+    margin-right:0;
+    background-image:url('../img/home/newinf/p3.png');
+}
+#warp .warp2 .main ul li:nth-child(4){
+    background-image:url('../img/home/newinf/p4.png');
+}
+#warp .warp2 .main ul li:nth-child(5){
+    background-image:url('../img/home/newinf/p5.png');
+}
+#warp .warp2 .main ul li:nth-child(6){
+    margin-right:0;
+    background-image:url('../img/home/newinf/p6.png');
+}
+#warp .warp2 .main ul li:hover{
+    background-position-y:0;
+}
+#warp .warp2 .main ul li:hover i:nth-child(1){animation:item1 .3s 0s;}
+#warp .warp2 .main ul li:hover i:nth-child(2){animation:item2 .2s .3s;}
+#warp .warp2 .main ul li:hover i:nth-child(3){animation:item3 .3s .5s;}
+#warp .warp2 .main ul li:hover i:nth-child(4){animation:item4 .3s .8s;}
+
+#warp .warp2 .main ul li i{
+    position:absolute;
+    background:#a57c47;
+    animation-fill-mode:forwards !important;
+    animation-timing-function:linear;
+}
+#warp .warp2 .main ul li i:nth-child(1){
+    top:6px;
+    left:8px;
+    height:2px;
+}
+#warp .warp2 .main ul li i:nth-child(2){
+    top:6px;
+    right:6px;
+    width:2px;
+}
+#warp .warp2 .main ul li i:nth-child(3){
+    bottom:23px;
+    right:6px;
+    height:2px;
+}
+#warp .warp2 .main ul li i:nth-child(4){
+    bottom:25px;
+    left:8px;
+    width:2px;
+}
+/* 弹窗部分 */
+#warp .warp2 .popWindow{
+    position:fixed;
+    top:0;
+    left:0;
+    z-index:666;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.7);
+    opacity:0;
+}
+#warp .warp2 .popWindow .winWarp{
+    position:absolute;
+    top:0;
+    left:0;
+    bottom:0;
+    right:0;
+    margin:auto;
+    width:1180px;
+    height:735px;
+}
+#warp .warp2 .popWindow .winWarp .close{
+    top:85px;
+    right:75px;
+}
+#warp .warp2 .popWindow .winWarp ul li{
+    display:none;
+    position:absolute;
+    top:0;
+    left:-75px;
+    width:1180px;
+    height:735px;
+    background-repeat:no-repeat;
+    background-position-y:-35px;
+}
+#warp .warp2 .popWindow .winWarp ul li.show{
+    display:block;
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(1){
+    background-image:url('../img/home/newinf/ren1.png');
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(2){
+    background-image:url('../img/home/newinf/ren2.png');
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(3){
+    background-image:url('../img/home/newinf/ren3.png');
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(4){
+    background-image:url('../img/home/newinf/ren4.png');
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(5){
+    background-image:url('../img/home/newinf/ren5.png');
+}
+#warp .warp2 .popWindow .winWarp ul li:nth-child(6){
+    background-image:url('../img/home/newinf/ren6.png');
+}
+
+    /* 弹窗内容部分 */
+#warp .warp2 .popWindow .winWarp ul li .content{
+    position:absolute;
+    top:160px;
+    left:568px;
+    width:425px;
+    height:330px;
+    overflow:hidden;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt{
+    position:absolute;
+    width:390px;
+}
+/*文字样式集*/
+#warp .warp2 .popWindow .winWarp ul li .content .txt p{
+    font-size:16px;
+    font-family:"MicroSoft YaHei";
+    line-height:36px;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt p.normal{
+    color:#393939;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt .boldRed{
+   color:#e5402a;
+   font-weight:bold;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt .boldBlack{
+    color:#000;
+    font-weight:bold;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt .red{
+    color:red;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .txt .mar-btm{
+    margin-bottom:38px;
+}
+#warp .warp2 .popWindow .winWarp ul li .content:hover .scroll{
+    opacity:1;
+}
+/* 滚动条 */
+#warp .warp2 .popWindow .winWarp ul li .content .scroll{
+    opacity:0;
+    position:absolute;
+    top:0;
+    right:0;
+    height:330px;
+    width:8px;
+    background:#E2E2E2;
+    transition:1s;
+}
+#warp .warp2 .popWindow .winWarp ul li .content .scroll i{
+    position:absolute;
+    top:0;
+    left:0;
+    width:8px;
+    background:#000;
+    cursor:default;
+}
+#warp .warp2 .popWindow .winWarp .BtnLib{
+    position:absolute;
+    top:44%;
+    width:100%;
+    height:18px;
+}
+#warp .warp2 .popWindow .winWarp .BtnLib div{
+    cursor:pointer;
+    background-repeat:no-repeat;
+}
+#warp .warp2 .popWindow .winWarp .BtnLib .BtnLeft{
+    position:absolute;
+    left:-50px;
+    width:48px;
+    height:18px;
+    background-image:url('../img/home/newinf/toleft.png');
+}
+#warp .warp2 .popWindow .winWarp .BtnLib .BtnRight{
+    position:absolute;
+    right:-50px;
+    width:48px;
+    height:18px;
+    background-image:url('../img/home/newinf/toright.png');
+}
+#warp .warp2 .popWindow .winWarp .BtnLib .BtnLeft:hover{
+    animation:toLeft 1s 0s linear infinite alternate;
+}
+#warp .warp2 .popWindow .winWarp .BtnLib .BtnRight:hover{
+    animation:toRight 1s 0s linear infinite alternate;
+}
+
+/*** 区块3(游戏特色) ***/
+#warp .warp3{
+    width:100%;
+}
+#warp .warp3 p.title{
+    position:relative;
+    top:0;
+    left:0;
+    width:800px;
+    height:150px;
+    margin:auto;
+    background-image:url('../img/home/gamegood/gamegood_title.png');
+    transition:2s;
+}
+#warp .warp3 p.title.hide{
+    opacity:0;
+    top:120px;
+}
+#warp .warp3 .main{
+    position:relative;
+    width:1130px;
+    height:441px;
+    margin:35px auto 0;
+    transition:2.5s;
+    transform-style:preserve-3d;
+}
+#warp .warp3 .main.hide{
+    opacity:0;
+}
+/*3d展示banner*/
+#warp .warp3 .main .show-list{
+    width:1044px;
+    height:439px;
+    margin:auto;
+
+    perspective:800px;
+}
+#warp .warp3 .main .show-list li{
+    opacity:0;
+    position:absolute;
+    left:50%;
+    width:776px;
+    height:100%;
+    margin-left:-388px;
+    transform:translate3d(0,0,-500px);
+    transition:transform .5s;
+}
+
+#warp .warp3 .main .show-list li.left{
+    opacity:1;
+    transform:translate3d(-335px,0px,-450px) rotateY(60deg);
+    z-index:3;
+}
+#warp .warp3 .main .show-list li.middle{
+    opacity:1;
+    transform:translate3d(0,0,0) rotateY(0deg);
+    z-index:4;
+}
+#warp .warp3 .main .show-list li.middle .line{
+    position:absolute;
+    top:50%;
+    left:50%;
+    width:746px;
+    height:410px;
+    margin-top:-205px;
+    margin-left:-373px;
+}
+#warp .warp3 .main .show-list li.middle .line i{
+    position:absolute;
+    background:#fff;
+    animation-fill-mode:forwards !important;
+}
+#warp .warp3 .main .show-list li.middle .line i:nth-child(1){
+    left:0;
+    top:0;
+    height:1px;
+    animation:line1 .5s 0s;
+}
+#warp .warp3 .main .show-list li.middle .line i:nth-child(2){
+    right:0;
+    top:0;
+    width:1px;
+    animation:line2 .25s .5s;
+}
+#warp .warp3 .main .show-list li.middle .line i:nth-child(3){
+    right:0;
+    bottom:0;
+    height:1px;
+    animation:line1 .5s .75s;
+}
+#warp .warp3 .main .show-list li.middle .line i:nth-child(4){
+    left:0;
+    bottom:0;
+    width:1px;
+    animation:line2 .5s 1.25s;
+}
+@keyframes line1{
+    from{width:0;}
+    to{width:100%;}
+}
+@keyframes line2{
+    from{height:0;}
+    to{height:100%;}
+}
+#warp .warp3 .main .show-list li.right{
+    transform:translate3d(335px,0px,-450px) rotateY(-60deg);
+    opacity:1;
+    z-index:2;
+}
+#warp .warp3 .main .show-list li.left:after,#warp .warp3 .main .show-list li.right:after{
+    content:'';
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    background:rgba(0,0,0,.6);
+    cursor:pointer;
+}
+
+#warp .warp3 .main .show-list li:nth-child(1){
+    background-image:url('../img/home/gamegood/bannerimg1.jpg');
+}
+#warp .warp3 .main .show-list li:nth-child(2){
+    background-image:url('../img/home/gamegood/bannerimg2.jpg');
+}
+#warp .warp3 .main .show-list li:nth-child(3){
+    background-image:url('../img/home/gamegood/bannerimg3.jpg');
+}
+#warp .warp3 .main .show-list li:nth-child(4){
+    background-image:url('../img/home/gamegood/bannerimg4.jpg');
+}
+#warp .warp3 .main .show-list li:nth-child(5){
+    background-image:url('../img/home/gamegood/bannerimg5.jpg');
+}
+/*两个按钮*/
+#warp .warp3 .main .btn{
+    position:absolute;
+    top:50%;
+    margin-top:-41px;
+    width:42px;
+    height:82px;
+    cursor:pointer;
+}
+#warp .warp3 .main .btn-left{
+    left:0;
+    background-image:url('../img/home/gamegood/left.png');
+}
+#warp .warp3 .main .btn-right{
+    right:0;
+    background-image:url('../img/home/gamegood/right.png');
+}
+/*** 区块4(底部) ***/
+#warp .warp4{
+    position:relative;
+    top:0;
+    opacity:1;
+    margin-top:100px;
+    width:100%;
+    height:225px;
+    overflow:hidden;
+    transition:1s;
+}
+#warp .warp4.hide{
+    top:50px;
+    opacity:0;
+}
+#warp .warp4 .share{
+    width:100%;
+    margin:auto;
+    color:#666;
+}
+#warp .warp4 .share ul{
+    width:600px;
+    margin:auto;
+}
+#warp .warp4 .share ul li{
+    float:left;
+    margin:0 11px;
+}
+#warp .warp4 .share ul li.font{
+    margin-right:5px;
+    vertical-align:middle;
+}
+#warp .warp4 .share ul li a{
+    font-size:15px;
+    color:#666;
+    vertical-align:middle;
+}
+#warp .warp4 .share ul li a:hover{
+    color:#333;
+}
+#warp .warp4 .share ul li a i{
+    margin-right:2px;
+    font-size:20px;
+    vertical-align:middle;
+}
+/*更多部分*/
+#warp .warp4 .share ul li.more{
+    position:relative;
+}
+#warp .warp4 .share ul li.more .sect1{
+    position:absolute;
+    right:-210px;
+    z-index:66;
+    width:202px;
+    height:56px;
+    padding:2px;
+    background:#fff;
+    border:1px solid #c2c2c2;
+    opacity:0;
+    display:none;
+}
+#warp .warp4 .share ul li.more .sect1 a{
+    float:left;
+    width:97px;
+    height:24px;
+    border:1px solid transparent;
+    transition:.5s;
+    font-size:12px;
+    line-height:24px;
+    color:#000;
+    font-family:'微软雅黑';
+}
+#warp .warp4 .share ul li.more .sect1 a:hover{
+    background:#f0f0f0;
+    border:1px solid #e0e0e0;
+}
+#warp .warp4 .share ul li.more .sect1 a i{
+    display:inline-block;
+    width:20px;
+    height:20px;
+    margin:-2px 8px 0px;
+    background-image:url('../img/home/bottom/icon.v5.png');
+    background-repeat:no-repeat;
+}
+#warp .warp4 .share ul li.more .sect1 a:nth-child(3),#warp .warp4 .share ul li.more .sect1 a:nth-child(4){
+    margin-top:4px;
+}
+#warp .warp4 .share ul li.more .sect1 a:nth-child(1) i{
+    background-position:0 -175px;
+}
+#warp .warp4 .share ul li.more .sect1 a:nth-child(2) i{
+    background-position:0 -476px;
+}
+#warp .warp4 .share ul li.more .sect1 a:nth-child(3) i{
+    background-position:0 -250px;
+}
+#warp .warp4 .share ul li.more .sect1 a:nth-child(4) i{
+    background-position:0 -450px;
+}
+
+
+
+/************
+    动画集
+*************/
+/* 扫描二维码 */
+@keyframes moveLine{
+    from{top:0;}
+    to{top:115px;}
+}
+/* 移动鼠标 */
+@keyframes moveMouse{
+    from{bottom:235px; opacity:1;}
+    to{bottom:150px;opacity:0;}
+}
+/* 线条 */
+@keyframes item1{
+    from{width:0px;}
+    to{width:402px;}
+}
+@keyframes item2{
+    from{height:0px;}
+    to{height:180px;}
+}
+@keyframes item3{
+    from{width:0px;}
+    to{width:404px;}
+}
+@keyframes item4{
+    from{height:0px;}
+    to{height:180px;}
+}
+/* 左右切换按钮动画 */
+@keyframes toLeft{
+    from{left:-50px;}
+    to{left:-80px;}
+}
+@keyframes toRight{
+    from{right:-50px;}
+    to{right:-80px;}
+}
